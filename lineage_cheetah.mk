@@ -11,7 +11,7 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Matrixx
 MATRIXX_BUILD_TYPE := Official
 MATRIXX_MAINTAINER := Pyrtle93
-MATRIXX_CHIPSET := GS201
+MATRIXX_CHIPSET := TensorG2
 MATRIXX_BATTERY := 5000mah
 MATRIXX_DISPLAY := 1440x3120
 
@@ -22,9 +22,12 @@ TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_INCLUDE_PIXEL_FRAMEWORK := true
 TARGET_USES_GOOGLE_DIALER_CARRIER_SETTINGS :=true
 TARGET_EXCLUDES_AUDIOFX := true
+TARGET_EXCLUDES_AUXIO := true
+TARGET_EXCLUDES_VIA := true
+TARGET_PIXEL_BOOT_ANIMATION_RES := 1440
 TARGET_IS_PIXEL := true
-TARGET_PIXEL_STAND_SUPPORTED := true
 TARGET_IS_PIXEL_7 := true
+TARGET_PIXEL_STAND_SUPPORTED := true
 
 # Inherit device configuration
 $(call inherit-product, device/google/pantah/aosp_cheetah.mk)
@@ -36,11 +39,6 @@ include device/google/pantah/cheetah/device-lineage.mk
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 7 Pro
 PRODUCT_NAME := lineage_cheetah
-
-# Boot animation
-TARGET_SCREEN_HEIGHT := 3120
-TARGET_SCREEN_WIDTH := 1440
-TARGET_PIXEL_BOOT_ANIMATION_RES := 1440
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_PRODUCT=cheetah \
