@@ -21,11 +21,17 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     EuiccSupportPixelOverlay
 
+# Basic Call Recording
+$(call inherit-product-if-exists, vendor/bcr/bcr.mk)
+
 # PixelParts
 include packages/apps/PixelParts/device.mk
 
 # PowerShare
 include hardware/google/pixel/powershare/device.mk
+
+# Viper4Android
+$(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
 
 # wireless_charger HAL service
 include device/google/gs-common/wireless_charger/wireless_charger.mk
